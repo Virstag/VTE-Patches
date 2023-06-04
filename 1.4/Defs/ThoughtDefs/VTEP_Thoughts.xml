@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThoughtDef>
+		<defName>VTG_RGWetChildOfTheSea</defName>
+		<durationDays>0.1</durationDays>
+		<stackLimit>1</stackLimit>
+		<stages>
+			<li>
+				<label>wet</label>
+				<description>I'm wet. I like it.</description>
+				<baseMoodEffect>1</baseMoodEffect>
+			</li>
+		</stages>
+		<requiredTraits><li>VTE_ChildOfSea</li></requiredTraits>
+		<modExtensions>
+			<li Class="VFECore.ThoughtExtensions">
+				<removeThoughtsWhenAdded>
+						<li>VTG_RGExtremelyWetChildOfTheSea</li>
+				</removeThoughtsWhenAdded>
+			</li>
+		</modExtensions>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>VTG_RGExtremelyWetChildOfTheSea</defName>
+		<durationDays>0.3</durationDays>
+		<stackLimit>1</stackLimit>
+			<stages>
+				<li>
+					<label>extremely wet</label>
+					<description>I'm extremely wet. Love it.</description>
+					<baseMoodEffect>5</baseMoodEffect>
+				</li>
+			</stages>
+			<requiredTraits><li>VTE_ChildOfSea</li></requiredTraits>
+			<modExtensions>
+				<li Class="VFECore.ThoughtExtensions">
+					<removeThoughtsWhenAdded>
+						<li>VTG_RGWetChildOfTheSea</li>
+					</removeThoughtsWhenAdded>
+				</li>
+			</modExtensions>
+		</ThoughtDef>
+
+</Defs>

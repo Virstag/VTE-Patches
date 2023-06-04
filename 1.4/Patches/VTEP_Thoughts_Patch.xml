@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<Patch>
+
+<!-- ReGrowth Core -->
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>ReGrowth: Core</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThoughtDef[defName = "RG_Wet"]</xpath>
+					<value><nullifyingTraits><li>VTE_ChildOfSea</li></nullifyingTraits><thoughtToMake>VTG_RGWetChildOfTheSea</thoughtToMake></value>
+				</li>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThoughtDef[defName = "RG_ExtremelyWet"]</xpath>
+					<value><nullifyingTraits><li>VTE_ChildOfSea</li></nullifyingTraits><thoughtToMake>VTG_RGExtremelyWetChildOfTheSea</thoughtToMake></value>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+	
+	
+<!-- Alpha Biomes -->
+
+	<Operation Class="PatchOperationFindMod">
+		<mods>
+			<li>Alpha Biomes</li>
+		</mods>
+		<match Class="PatchOperationSequence">
+			<operations>
+				<li Class="PatchOperationAdd">
+					<xpath>/Defs/ThoughtDef[defName = "AB_ForsakenNight"]/nullifyingTraits</xpath>
+					<value><li>VTE_ChildOfMountain</li></value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ThoughtDef[defName = "AB_ForsakenRain"]/nullifyingPrecepts</xpath>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ThoughtDef[defName = "AB_ForsakenRain"]/nullifyingTraits</xpath>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThoughtDef[defName = "AB_ForsakenRain"]/stages</xpath>
+					<value><stages><li><label>preternatural rain</label><description>No matter what I think about being in the dark or wet, this rain just feels wrong and I don't like it.</description><baseMoodEffect>-6</baseMoodEffect></li></stages></value>
+				</li>
+				<li Class="PatchOperationReplace">
+					<xpath>/Defs/ThoughtDef[defName = "AB_ForsakenThunderstorm"]/nullifyingTraits</xpath>
+					<value><nullifyingTraits><li>Psychopath</li></nullifyingTraits></value>
+				</li>
+				<li Class="PatchOperationRemove">
+					<xpath>/Defs/ThoughtDef[defName = "AB_ForsakenThunderstorm"]/nullifyingPrecepts</xpath>
+				</li>
+			</operations>
+		</match>
+	</Operation>
+
+	
+
+</Patch>
